@@ -8,9 +8,9 @@ namespace TimeEntryLab
 {
     class Project
     {
-        public int Id
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
-
+        public virtual ICollection<Project> Projects { get; set; } 
     }
 }

@@ -8,5 +8,7 @@ namespace TimeEntryLab
 {
     class DevelopmentGroup
     {
+        public string Name { get; set; }
+        public virtual ICollection<DevelopmentGroup>DevelopmentGroups { get; set; } 
     }
 }
