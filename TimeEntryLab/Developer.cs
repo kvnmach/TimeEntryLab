@@ -20,8 +20,8 @@ namespace TimeEntryLab
 
     public class Client
     {
-        public string Name { get; set; }
         public int Id { get; set; }
+        public string Name { get; set; }
         public virtual ICollection<Industry> Industries { get; set; } 
 
     }
@@ -67,6 +67,8 @@ namespace TimeEntryLab
     {
         public int Id { get; set; }
         public string Comment { get; set; }
+        public virtual Developer Developer { get; set; }
+        public virtual Client Client { get; set; }
     }
 
     public class ProjectComment
