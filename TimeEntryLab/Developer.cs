@@ -10,13 +10,19 @@ namespace TimeEntryLab
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime Date { get; set; }
-        
+        public virtual ICollection<Client> Clients { get; set; } 
+        public virtual ICollection<Group> Groups { get; set; } 
+        public virtual ICollection<Project> Projects { get; set; } 
+        public virtual ICollection<ProjectComment> ProjectComments { get; set; }
+        public virtual ICollection<ClientComment> ClientComments { get; set; }
+        public virtual ICollection<IndustryComment> IndustryComments { get; set; }   
     }
 
     public class Client
     {
         public string Name { get; set; }
         public int Id { get; set; }
+        public virtual ICollection<Industry> Industries { get; set; } 
 
     }
 
@@ -25,23 +31,26 @@ namespace TimeEntryLab
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
-        public virtual ICollection<Project> Projects { get; set; }
-    }
-
-    public class Task
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
+        public virtual ICollection<Client> Clients { get; set; }
+        public virtual ICollection<Developer> Developers { get; set; }  
+         
 
     }
 
-    public class DevelopmentGroup
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
+    //public class Task
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
 
-    }
+
+    //}
+
+    //public class DevelopmentGroup
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+
+    //}
 
     public class Industry
     {
@@ -78,6 +87,6 @@ namespace TimeEntryLab
         public string Name { get; set; }
     }
 
-    
+
 
 }
